@@ -15,11 +15,6 @@ driver = webdriver.Chrome(executable_path = r"C:\Users\thiag\Documents\chrome-we
 driver.get(URL)
 time.sleep(2)
 
-#
-# Click on 'I agree' button and wait for a second.
-# driver.find_element_by_xpath("//button[@value='agree']").click()
-# time.sleep(1)
-
 # Enter name of company in searchbox, and wait for 2 seconds.
 driver.find_element_by_xpath("//input[@placeholder = 'Search for news, symbols or companies']").send_keys("BTC-EUR")
 time.sleep(2)
@@ -54,7 +49,7 @@ extracted_data = []
 # Loop to go through each row of table
 btc_file = open('eur_btc_rates.csv', 'w', newline="")
 writer = csv.writer(btc_file)
-writer.writerow(["Date","Close"])
+writer.writerow(["Date"," Close"])
 for i in range(0, 10):
   Values = Rows[i].find_all('td')
   
